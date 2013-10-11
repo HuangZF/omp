@@ -8,10 +8,10 @@ import org.apache.struts2.convention.annotation.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.ruyicai.omp.controller.base.BaseAction;
-import com.ruyicai.omp.model.User;
+import com.ruyicai.omp.domain.User;
 import com.ruyicai.omp.service.SSJDemoService;
 
-@ParentPackage(value = "showcase")
+@ParentPackage(value = "parent-package")
 public class SSJDemo extends BaseAction {
 	
 	/**
@@ -26,8 +26,9 @@ public class SSJDemo extends BaseAction {
 	@Autowired
 	private SSJDemoService ssjDemoService;
 	
-	@Action(value = "/jsontable" , results = {
-	    	@Result(name = "success", type = "json", params = {"excludeProperties", "respCode"})
+	@Action(value = "/jsontable/ssjdemo" , results = {
+	    	@Result(name = "success", type = "json", params = 
+	    		{"excludeProperties", "respCode"})
 	    })
 	public String queryJSON(){
 		gridModel = ssjDemoService.queryUserList();
@@ -43,16 +44,15 @@ public class SSJDemo extends BaseAction {
 		
 		return "success";
 	}
-
 	
 	public List<User> getGridModel() {
 		System.out.println("print gridModel");
 		return gridModel;
 	}
 
-//	public void setGridModel(List<User> gridModel) {
-//		this.gridModel = gridModel;
-//	}
+	public void setGridModel(List<User> gridModel) {
+		this.gridModel = gridModel;
+	}
 	
 	// if set excludeProperties that the getter will not execute when respose,
 	// because the intercepter will filter it

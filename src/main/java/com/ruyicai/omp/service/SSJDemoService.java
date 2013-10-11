@@ -5,7 +5,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.ruyicai.omp.model.User;
+import com.ruyicai.omp.domain.TcashDetail;
+import com.ruyicai.omp.domain.User;
 
 @Service
 public class SSJDemoService {
@@ -24,7 +25,6 @@ public class SSJDemoService {
 			
 			gridModel.add(u);
 		}
-		
 		return gridModel;
 	}
 

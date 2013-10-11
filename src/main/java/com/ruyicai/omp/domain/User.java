@@ -1,4 +1,4 @@
-package com.ruyicai.omp.model;
+package com.ruyicai.omp.domain;
 
 public class User {
 

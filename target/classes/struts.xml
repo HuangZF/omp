@@ -23,19 +23,17 @@
     "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
     "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-	
-	<!-- <include file="test.xml"/> -->
-	
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
     <constant name="struts.devMode" value="false" />
     <constant name="struts.convention.action.packages" value="com.ruyicai.omp.controller"/>
-    <constant name="struts.convention.default.parent.package" value="showcase"/>
+    <constant name="struts.convention.default.parent.package" value="parent-package"/>
+    <constant name="struts.convention.result.path" value="/WEB-INF/pages/"/>
     
     <!--  
     <constant name="struts.objectFactory.spring.autoWire" value="auto" />
     -->
 
-	<package name="showcase" extends="struts-default,json-default">
+	<package name="parent-package" extends="struts-default,json-default">
 		<!-- 自定义拦截器 -->
 		<interceptors>
 			<!-- struts inject spring context -->
@@ -53,5 +51,7 @@
 			<result name="error">/error.jsp</result>
 		</global-results>
 	</package>
+	
+	<include file="struts-tcash.xml"/>
     
 </struts>

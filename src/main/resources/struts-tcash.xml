@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	
+	<package name="tcash" extends="parent-package">
+		<action name="query_*" method="{1}" class="com.ruyicai.omp.controller.QueryController" >
+			<result name="success">WEB-INF/pages/tcash/TcashDetail.jsp</result>
+		</action>
+		<action name="tcash_*" method="{1}" class="com.ruyicai.omp.controller.TcashDetailController" >
+			<result name="success" type="json">
+				<param name="root">gridModel</param>
+			</result>
+		</action>
+	</package>
+    
+</struts>
