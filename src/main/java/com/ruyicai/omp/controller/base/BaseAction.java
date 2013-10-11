@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.ruyicai.omp.controller.base;
 
 import java.io.IOException;
@@ -16,7 +13,6 @@ import org.codehaus.jackson.map.ObjectMapper;
 import com.opensymphony.xwork2.ActionSupport;
 import com.ruyicai.omp.util.JqGridSearchTo;
 
-
 /**
  * @author hzf
  * 
@@ -26,8 +22,7 @@ public class BaseAction extends ActionSupport implements SessionAware {
 	protected final Log logger = LogFactory.getLog(getClass());
 	protected String oper = "";
 	protected Map<String, Object> session;
-	// get how many rows we want to have into the grid - rowNum attribute in the
-	// grid
+	// get how many rows we want to have into the grid - rowNum attribute in the grid
 	protected Integer rows = 0;
 	// Get the requested page. By default grid sets this to 1.
 	protected Integer page = 0;
@@ -39,7 +34,6 @@ public class BaseAction extends ActionSupport implements SessionAware {
 	protected String sord;
 	// get index row - i.e. user click to sort.排序字段
 	protected String sidx;
-
 	// Search Field
 	protected String searchField;
 	// The Search String
@@ -47,10 +41,10 @@ public class BaseAction extends ActionSupport implements SessionAware {
 	// he Search Operation
 	// ['eq','ne','lt','le','gt','ge','bw','bn','in','ni','ew','en','cn','nc']
 	protected String searchOper;
-	//一页显示全部数据，不分页
+	// all data show at on page
 	protected boolean loadonce = false;
 	private String	filters;
-
+	
 	public String getFilters() {
 		return filters;
 	}
@@ -130,8 +124,6 @@ public class BaseAction extends ActionSupport implements SessionAware {
 		}
 	}
 
-
-
 	/**
 	 * @return sorting order
 	 */
@@ -192,13 +184,13 @@ public class BaseAction extends ActionSupport implements SessionAware {
 	
 	protected JqGridSearchTo getJqGridSearchTo(){
 		/*
-		 *  filters =    
-    		{	"groupOp":"AND",   
-     			"rules":[   
-       			{"field":"invdate","op":"ge","data":"2007-10-06"},   
-       			{"field":"invdate","op":"le","data":"2007-10-20"},    
-       			{"field":"name","op":"bw","data":"Client 3"}   
-      			]   
+		 *  filters =
+    		{	"groupOp":"AND",
+     			"rules":[
+	       			{"field":"invdate","op":"ge","data":"2007-10-06"},
+	       			{"field":"invdate","op":"le","data":"2007-10-20"},
+	       			{"field":"name","op":"bw","data":"Client 3"}
+      			]
     		} 
 		 */
 		JqGridSearchTo jqGridSearchTo = null;

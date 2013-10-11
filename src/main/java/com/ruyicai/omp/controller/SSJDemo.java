@@ -1,51 +1,36 @@
 package com.ruyicai.omp.controller;
 
-
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.ruyicai.omp.controller.base.BaseAction;
 import com.ruyicai.omp.model.User;
-import com.ruyicai.omp.util.ResponseData;
+import com.ruyicai.omp.service.SSJDemoService;
 
 @ParentPackage(value = "showcase")
-public class SpringMVCTest extends BaseAction {
+public class SSJDemo extends BaseAction {
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -665966043255846041L;
 	
-	private String respCode = "0000";
+	private String respCode;
 	
 	private List<User> gridModel;
-
-	@Action(value = "/jsontable", results = {
-	    	@Result(name = "success", type = "json", params ={"includeProperties","gridModel"})
+	
+	@Autowired
+	private SSJDemoService ssjDemoService;
+	
+	@Action(value = "/jsontable" , results = {
+	    	@Result(name = "success", type = "json", params = {"excludeProperties", "respCode"})
 	    })
 	public String queryJSON(){
-		ResponseData rd = new ResponseData();
-		rd.setValue("test mvc");
-		System.out.println("test mvc");
-		
-		gridModel = new ArrayList<User>();
-		
-		long start = System.currentTimeMillis();
-		for(int i =0;i<100;i++)
-		{
-			User u = new User();
-			u.setId(String.valueOf(i));
-			u.setName("test" + String.valueOf(i));
-			u.setCountry(String.valueOf(i));
-			u.setCreditLimit(String.valueOf(i));
-			u.setCity(String.valueOf(i));
-			
-			gridModel.add(u);
-		}
+		gridModel = ssjDemoService.queryUserList();
 		
 		// Count Rows
 		setRecords(10000);
@@ -56,26 +41,25 @@ public class SpringMVCTest extends BaseAction {
 		// calculate the total pages for the query
 		setTotal((int) Math.ceil((double) getRecords() / (double) getRows()));
 		
-		long end = System.currentTimeMillis();
-		System.out.println(end - start);
-		
 		return "success";
 	}
 
-
+	
 	public List<User> getGridModel() {
+		System.out.println("print gridModel");
 		return gridModel;
 	}
 
-	public void setGridModel(List<User> gridModel) {
-		this.gridModel = gridModel;
-	}
+//	public void setGridModel(List<User> gridModel) {
+//		this.gridModel = gridModel;
+//	}
 	
-	
+	// if set excludeProperties that the getter will not execute when respose,
+	// because the intercepter will filter it
 	public String getRespCode() {
+		System.out.println("print respCode");
 		return respCode;
 	}
-
 
 	public void setRespCode(String respCode) {
 		this.respCode = respCode;

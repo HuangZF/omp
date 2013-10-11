@@ -30,9 +30,28 @@
     <constant name="struts.devMode" value="false" />
     <constant name="struts.convention.action.packages" value="com.ruyicai.omp.controller"/>
     <constant name="struts.convention.default.parent.package" value="showcase"/>
-    <constant name="struts.custom.i18n.resources" value="messages" />
     
-    <package name="showcase" extends="struts-default,json-default">
-    </package>
+    <!--  
+    <constant name="struts.objectFactory.spring.autoWire" value="auto" />
+    -->
+
+	<package name="showcase" extends="struts-default,json-default">
+		<!-- 自定义拦截器 -->
+		<interceptors>
+			<!-- struts inject spring context -->
+			<interceptor name="autowiring"
+				class="com.opensymphony.xwork2.spring.interceptor.ActionAutowiringInterceptor" />
+
+			<interceptor-stack name="mystack">
+				<interceptor-ref name="autowiring"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="mystack"></default-interceptor-ref>
+		<!-- 全局页面 -->
+		<global-results>
+			<result name="error">/error.jsp</result>
+		</global-results>
+	</package>
     
 </struts>
