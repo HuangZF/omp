@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.ruyicai.omp.domain.TcashDetail;
 import com.ruyicai.omp.domain.User;
 
 @Service

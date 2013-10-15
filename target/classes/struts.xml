@@ -53,5 +53,6 @@
 	</package>
 	
 	<include file="struts-tcash.xml"/>
+	<include file="struts-system.xml"/>
     
 </struts>

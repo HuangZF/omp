@@ -1,0 +1,82 @@
+
+
+.menuList {
+	font-family:"华文细黑";
+  	margin: 0px;
+  	padding: 10px 0px 10px 15px;
+  	background-color:#EAEAEA;
+}
+
+li.menubar {
+  background: url(../images/gif-0835.gif) no-repeat 0em 0.3em;
+  line-height: 1.5em;
+  list-style: none outside;
+}
+
+.menu, .submenu {
+  display: none;
+  margin-left: 15px;
+  padding: 0px;
+}
+
+.menu li, .submenu li  {
+  background: url(../images/gif-0793.gif) no-repeat 0em 0.3em;
+  list-style: none outside;
+}
+
+li.menubar a.standalone {
+  background: url(../images/gif-0793.gif) no-repeat 0em 0em !important;
+}
+
+a.actuator, a.standalone {
+  font-size: 15px;
+  color: #000;
+  padding-left: 15px;
+  text-decoration: none;
+}
+
+.menu li a, .submenu li a {
+  color: #000;
+  font-size: 12px;
+  padding-left: 15px;
+  text-decoration: none;
+}
+
+a.actuator:hover, .menu li a:hover, submenu li a:hover, li a.standalone:hover {
+  text-decoration: underline;
+  color: blue; 
+}
+
+ a.actuator:visited, .menu li a:visited,  li a.standalone:visited, li a.actuator:visited {
+	color: #000;
+}
+a.actuator:focus, .menu li a:focus,  li a.standalone:focus, li a.actuator:focus, submenu li a:focus {
+	color: red;
+}
+
+/* styles to allow for base links */
+li a.base {
+  font-size: 12px;
+  padding-left: 0px;
+  text-decoration: none;
+}
+
+li a.base:hover {
+  color: #CC0000;
+  text-decoration: none;
+}
+
+
+
+span.key {
+  text-decoration: underline;
+}
+
+a.highlight {
+    color: red !important;
+    font-weight: bold;
+}
+
+
+
+

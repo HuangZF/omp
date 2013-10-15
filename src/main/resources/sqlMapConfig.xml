@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMapConfig
+	PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"
+	"http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+
+	<settings cacheModelsEnabled="true" lazyLoadingEnabled="true"
+		enhancementEnabled="true" errorTracingEnabled="false" />
+	<!-- 
+		cacheModelsEnabled    使用缓存
+		lazyLoadingEnabled    延迟加载
+		enhancementEnabled    延迟记载增强
+	-->
+
+    <!-- 系统管理相关 -->
+	<sqlMap resource="com/ruyicai/omp/dao/sqlmaps/privilege/TcashDetail.xml" />
+	
+</sqlMapConfig>

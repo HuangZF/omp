@@ -1,0 +1,17 @@
+  thead th {white-space: nowrap;padding-right:18px;}
+  tbody td {white-space: nowrap;}
+  #statCondition td {
+    text-align:left;
+    overflow: hidden;
+    height: 22px;
+    padding: 0;
+    border-left-width: 1px;
+    border-left-color: inherit; 
+    border-left-style: solid;
+    border-right-width: 1px;
+    border-right-color: inherit; 
+    border-right-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: inherit;
+    border-bottom-style: solid;
+  }

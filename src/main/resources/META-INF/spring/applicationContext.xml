@@ -48,5 +48,59 @@
 			type="annotation" />
 	</context:component-scan>
 	
+    <!--oracle dbcp 数据源配置 --> 
+     <bean class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" id="dataSourceOracle">
+        <property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+        <property name="url" value="jdbc:oracle:thin:@192.168.0.92:1521:xe"/>
+        <property name="username" value="jrtsch"/>
+        <property name="password" value="jrtsch"/>
+        <property name="initialSize" value="10"/>
+        <property name="maxActive" value="20"/>
+        <property name="maxIdle" value="100"/>
+        <property name="minIdle" value="0"/>
+        <property name="maxWait" value="10000"/>
+        <property name="removeAbandoned" value="true"/>
+        <property name="removeAbandonedTimeout" value="60"/>
+        <property name="logAbandoned" value="true"/>
+    </bean>
+		
+	<!-- 配置iBatis的sqlMapClient -->
+	<bean id="sqlMapClient"
+		class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="dataSource"> 
+			<ref local="dataSourceOracle" />
+		</property>
+		<property name="configLocation">
+			<value>classpath:sqlMapConfig.xml</value>
+		</property>
+	</bean>
+	
+	<!-- 事务配置-->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceOracle" />
+	</bean>
+	
+	<!-- 配置事务通知-->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true" />
+			<tx:method name="query*" read-only="true" />
+			<tx:method name="del*" />
+			<tx:method name="add*" />
+			<tx:method name="update*" />
+			<tx:method name="do*" />				
+			<tx:method name="*" propagation="REQUIRED" rollback-for="Exception"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- 事务管理类配置 -->
+	<aop:config>
+		<aop:pointcut id="serviceOperation"
+			expression="execution(* com.ruyicai.omp.service.*.*.*.*(..))" />
+		<aop:advisor pointcut-ref="serviceOperation"
+			advice-ref="txAdvice" />
+	</aop:config>
+	
 	
 </beans>

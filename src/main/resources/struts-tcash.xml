@@ -6,12 +6,9 @@
 <struts>
 	
 	<package name="tcash" extends="parent-package">
-		<action name="query_*" method="{1}" class="com.ruyicai.omp.controller.QueryController" >
-			<result name="success">WEB-INF/pages/tcash/TcashDetail.jsp</result>
-		</action>
 		<action name="tcash_*" method="{1}" class="com.ruyicai.omp.controller.TcashDetailController" >
+			<result name="tcashdetail_page">WEB-INF/pages/tcash/TcashDetail.jsp</result>
 			<result name="success" type="json">
-				<param name="root">gridModel</param>
 			</result>
 		</action>
 	</package>

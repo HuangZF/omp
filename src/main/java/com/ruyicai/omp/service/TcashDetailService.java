@@ -8,10 +8,12 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.ruyicai.omp.domain.TcashDetail;
+import com.ruyicai.omp.service.support.ManagerSupport;
 
 @Service
-public class TcashDetailService {
+public class TcashDetailService extends ManagerSupport{
 
+	// test data
 	public List<TcashDetail> queryTcashDetailList()
 	{
 		List<TcashDetail> gridModel = new ArrayList<TcashDetail>();
@@ -42,9 +44,20 @@ public class TcashDetailService {
 			td.setEstimatefinishtime(new Date());
 			td.setFinishtime(new Date());
 			td.setOperator("operator" + String.valueOf(i));
-			
+
 			gridModel.add(td);
 		}
 		return gridModel;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<TcashDetail> queryTcashDetailList1()
+	{
+		return (List<TcashDetail>)dao.findObjectsByProperties("getTcashDetailListNoWhere");
+	}
+
+	public int countTcashDetail()
+	{
+		return (Integer) dao.findObjectByProperties("countTcashDetailNoWhere");
 	}
 }

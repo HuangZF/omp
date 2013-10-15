@@ -14,24 +14,29 @@ public class TcashDetailController extends BaseAction {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private List<TcashDetail> gridModel;
-	
+
 	@Autowired
 	private TcashDetailService tcashDetailService;
-	
+
+	public String showPage()
+	{
+		return "tcashdetail_page";
+	}
+
 	public String queryTcashDetail(){
-		setGridModel(tcashDetailService.queryTcashDetailList());
-		
 		// Count Rows
-		setRecords(10000);
+		setRecords(tcashDetailService.countTcashDetail());
+		// search list
+		setGridModel(tcashDetailService.queryTcashDetailList1());
 		int to = (getRows() * getPage());
 		if (to > getRecords()){
 			to = getRecords();
 		}
 		// calculate the total pages for the query
 		setTotal((int) Math.ceil((double) getRecords() / (double) getRows()));
-		
+
 		return "success";
 	}
 
@@ -42,7 +47,7 @@ public class TcashDetailController extends BaseAction {
 	public void setGridModel(List<TcashDetail> gridModel) {
 		this.gridModel = gridModel;
 	}
-	
+
 	/**
 	 * @return total pages for the query
 	 */

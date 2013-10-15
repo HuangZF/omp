@@ -1,0 +1,184 @@
+/* CSS Document */
+body{margin:0;
+     background:#f7af3a;
+	 }
+	 
+/*header*/
+#header{min-width:1280px;}
+
+#logo{background:url(../images/5.jpg) no-repeat top right;
+         width:317px;
+		 height:78px;
+		 float:left;
+		 margin:0 auto auto 0;}
+#welcome{height:78px;
+		float:left;
+		color:#CCFFFF;
+		}
+#welcome table{padding-top:20px;
+               }
+#header-right{ height:80px;
+	           float:right;
+	           margin-right:3%;
+	           }
+#header-right a{display:block;
+       padding-top:62px;
+	   font-size:13px;}
+	   
+/*nav*/	   
+	   
+/*������ɫ*/	   
+#color{width:165px;float:left;
+       }
+#se{float:left;
+   font-size:13px;
+   font-weight:bold;
+   display:block;
+    padding-top:3px;}
+#color select{float:left;}
+
+
+#nav {  float:left;
+         height:27px;
+		 background:#f7af3a;
+		 border-bottom:1px solid #000000;
+		 border-top:none;
+		 }
+#nav ul{ width:100%;
+		text-align:center;
+		margin:0;
+		padding:0 0 0 0px;
+		list-style:none;
+		background:#f7af3a;
+		}
+#nav li{ text-align:center;
+                     float:left;
+					 margin:2px 1px 0 0;
+					 padding-left:0px;
+					 font-family:Arial, Helvetica, sans-serif;
+					 font-size:83%;
+					 font-weight: bold;
+					 letter-spacing:3px;
+					 font-style:normal;
+					 }
+#nav ul li a{float:left;
+              width:74px;
+              display:block;
+			  margin:0;
+			  padding:7px 8px 3px 5px;
+			  color: #000000;
+			  text-decoration:none;
+			  border-bottom:none;
+			  background:#134584; background: url(../images/sanc.gif) no-repeat;
+			  }
+#nav a:hover, #nav .current_page_item a {
+	background: #FFFFFF;
+	text-decoration: none;padding-bottom:1px;
+}
+
+#nav .current_page_item{ font-weight:bold;
+	background: url(../images/san1c.gif) no-repeat;
+	border:0;
+	color: #000000;
+	padding-bottom:3px;
+}
+#nav ul li a:hover{ background: url(../images/san1c.gif) no-repeat;
+					padding-bottom:2px;
+					border-color:#727377;
+					color:#000000;
+					}
+
+/* ���岿�� ���������� */
+
+#m-body{width:99%;
+        min-width:1120px;
+        min-height:450px;
+		height:500px;
+        margin:0 1% 0 0;
+		background-color:#ffffff;
+		}
+/* ��ർ������ */
+#left-nav{width:180px;
+          height:500px;
+          min-height:450px;
+		  float:left;
+		  margin-bottom:0;}
+        
+#l-nav{width:160px;
+        height:500px;
+		border-top:1px solid #000000;
+		border-right:1px solid #000000;
+		float:left;
+		background:#f7af3a;
+		text-align:center;
+		}
+#l-nav table{text-align:center;
+              font-size:12px;}
+#l-nav table tr td a{width:130px;
+              height:28px;
+              display:block;
+			  background:url(../images/88c.gif) no-repeat;
+			  text-decoration:none;
+			  padding-top:12px;
+			  color: #000;
+			 }
+#l-nav tr td a:hover{ background:url(../images/882c.gif) no-repeat;
+					padding-bottom:4px;
+					color:#990000;}
+#l-nav a:hover, #zuodao .current_page_item{
+	text-decoration: none;padding-bottom:2px;
+	color:#990000;
+}
+
+.current_page_item{
+	background: url(../images/882c.gif) no-repeat;
+	color: #000000;
+	padding-bottom:2px;
+	
+	}
+.jiantou{float:left;}
+/*������ �����������  */
+#hide{float:left;}
+
+/* �Ҳ� */
+#work{float:left;
+	   }
+#work img{padding-top:20px;
+           padding-left:20px;}
+
+#header-right a{display:block;
+                text-decoration:none;
+                color: #000000;
+                }
+#header-right a hover{ }
+#zuodao{width:159px;
+        height:auto
+		border-top:1px solid #000000;
+		background-color:#f7af3a;
+		float:left;
+		text-align:center;
+		}
+#zuodao table{text-align:center;
+              font-size:12px;}
+#zuodao table tr td a{width:130px;
+              height:28px;
+              display:block;
+			  background:url(../images/88c.gif) no-repeat;
+			  text-decoration:none;
+			  padding-top:12px;
+			  color: #000000;
+			 }
+#zuodao tr td a:hover{ background:url(../images/881c.gif) no-repeat;
+					padding-bottom:5px;
+					color:#990000;}
+#zuodao a:hover, #zuodao .current_page_item a {
+	text-decoration: none;padding-bottom:2px;
+	color:#990000;
+}
+
+#zuodao .current_page_item{
+	background: url(../images/882c.gif);
+	color: #000000;
+	padding-bottom:2px;
+	}
+	   

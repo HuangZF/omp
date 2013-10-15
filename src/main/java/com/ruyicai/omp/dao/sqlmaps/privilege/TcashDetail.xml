@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="tcashdetail">
+	<typeAlias alias="TcashDetail" type="com.ruyicai.omp.domain.TcashDetail" />
+	
+    <resultMap id="TcashDetailList" class="TcashDetail">
+        <result property="id" column="id" />
+        <result property="userno" column="userno" />
+        <result property="ttransactionid" column="ttransactionid" />
+        <result property="name" column="name" />
+    </resultMap>
+    <sql id="countTcashDetail">
+    	SELECT COUNT(*) FROM TCASHDETAIL
+    </sql>
+	<sql id="getTcashDetailList">
+		SELECT 
+		ID,
+		USERNO,
+		TTRANSACTIONID,
+		NAME
+		from TCASHDETAIL
+	</sql>
+	<sql id="searchOrderby">
+		ORDER BY ID DESC
+	</sql>
+	<select id="countTcashDetailNoWhere" resultClass="java.lang.Integer">
+        <include refid="countTcashDetail"/>
+    </select>
+	<select id="getTcashDetailListNoWhere" resultMap="TcashDetailList">
+        <include refid="getTcashDetailList"/>
+        <include refid="searchOrderby"/>
+    </select>
+	
+</sqlMap>
