@@ -53,11 +53,13 @@ public class TcashDetailService extends ManagerSupport{
 	@SuppressWarnings("unchecked")
 	public List<TcashDetail> queryTcashDetailList1()
 	{
-		return (List<TcashDetail>)dao.findObjectsByProperties("getTcashDetailListNoWhere");
+//		return (List<TcashDetail>)dao.findObjectsByProperties("getTcashDetailListNoWhere");
+		return this.queryTcashDetailList();
 	}
 
 	public int countTcashDetail()
 	{
-		return (Integer) dao.findObjectByProperties("countTcashDetailNoWhere");
+//		return (Integer) dao.findObjectByProperties("countTcashDetailNoWhere");
+		return 100;
 	}
 }

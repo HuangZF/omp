@@ -6,7 +6,7 @@ public class JqGridSearchDetailTo implements Serializable {
 	private static final long serialVersionUID = 7677120123986147784L;
 	private String field;   // 查询字段   
     private String op;      // 查询操作   
-    private String data;    // 选择的查询数据   
+    private String data;    // 选择的查询数据  
        
     public JqGridSearchDetailTo(){   
            

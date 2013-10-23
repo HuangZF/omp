@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.opensymphony.xwork2.ModelDriven;
+import com.ruyicai.omp.constant.PubConst;
 import com.ruyicai.omp.controller.base.BaseAction;
 import com.ruyicai.omp.domain.TcashDetail;
 import com.ruyicai.omp.service.TcashDetailService;
 
-public class TcashDetailController extends BaseAction {
+public class TcashDetailController extends BaseAction implements ModelDriven<TcashDetail>{
 
 	/**
 	 * 
@@ -19,6 +21,8 @@ public class TcashDetailController extends BaseAction {
 
 	@Autowired
 	private TcashDetailService tcashDetailService;
+
+	private TcashDetail tcashDetail = new TcashDetail();
 
 	public String showPage()
 	{
@@ -38,6 +42,18 @@ public class TcashDetailController extends BaseAction {
 		setTotal((int) Math.ceil((double) getRecords() / (double) getRows()));
 
 		return "success";
+	}
+
+	// edit operation
+	public String edit(){
+		if (oper.equalsIgnoreCase("add")) {
+
+		}else if(oper.equalsIgnoreCase("edit")){
+
+		} else if (oper.equalsIgnoreCase("del")){
+
+		}
+		return PubConst.EDIT_SUCCESS;
 	}
 
 	public List<TcashDetail> getGridModel() {
@@ -63,12 +79,21 @@ public class TcashDetailController extends BaseAction {
 	public Integer getPage() {
 		return page;
 	}
+
+//	/**
+//	 * @return total number of records for the query. e.g. select count(*) from
+//	 *         table
+//	 */
+//	//要提供给页面的属性必须把get方法写在子类而不能写在BaseAction中
+//	public Integer getRecords() {
+//		return records;
+//	}
+
 	/**
-	 * @return total number of records for the query. e.g. select count(*) from
-	 *         table
+	 * override  the ModelDriven interface method
 	 */
-	//要提供给页面的属性必须把get方法写在子类而不能写在BaseAction中
-	public Integer getRecords() {
-		return records;
+	public TcashDetail getModel() {
+		return tcashDetail;
 	}
+
 }

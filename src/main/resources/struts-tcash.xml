@@ -9,6 +9,12 @@
 		<action name="tcash_*" method="{1}" class="com.ruyicai.omp.controller.TcashDetailController" >
 			<result name="tcashdetail_page">WEB-INF/pages/tcash/TcashDetail.jsp</result>
 			<result name="success" type="json">
+				<param name="root">action</param>
+				<!-- <param name="includeProperties">gridModel,total,page,records</param> -->
+				<!-- <param name="root">gridModel</param>
+				<param name="root">page</param>
+				<param name="root">records</param> -->
+				<!-- <param name="excludeProperties">model</param> -->
 			</result>
 		</action>
 	</package>
