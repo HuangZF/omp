@@ -1,4 +1,4 @@
-package com.ruyicai.omp.service;
+package com.ruyicai.omp.service.tcash;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.ruyicai.omp.domain.TcashDetail;
+import com.ruyicai.omp.domain.tcash.TcashDetail;
 import com.ruyicai.omp.service.support.ManagerSupport;
 
 @Service

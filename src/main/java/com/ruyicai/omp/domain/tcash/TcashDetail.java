@@ -1,4 +1,4 @@
-package com.ruyicai.omp.domain;
+package com.ruyicai.omp.domain.tcash;
 
 import java.math.BigDecimal;
 import java.util.Date;

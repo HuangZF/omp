@@ -27,7 +27,7 @@ body {
 }
 
 .mainContent {
-	background-color: white;
+	background-color: #1B4057;
 	padding: 55px 0;
 	overflow: visible;
 	padding-top: 55px;
@@ -61,7 +61,6 @@ body {
 .leftNav {
 	bottom: 0;
 	float: left;
-	position: relative;
 	padding-top: 55px;
 	width: 16%;
 	background: none repeat scroll 0 0 #310B28;

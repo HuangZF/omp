@@ -12,7 +12,7 @@
 		enhancementEnabled    延迟记载增强
 	-->
 
-    <!-- 系统管理相关 -->
-	<sqlMap resource="com/ruyicai/omp/dao/sqlmaps/privilege/TcashDetail.xml" />
+    <!-- 提现 -->
+	<sqlMap resource="com/ruyicai/omp/dao/sqlmaps/tcash/TcashDetail.xml" />
 	
 </sqlMapConfig>

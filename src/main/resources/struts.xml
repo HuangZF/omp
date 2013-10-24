@@ -36,10 +36,9 @@
 	<package name="parent-package" extends="struts-default,json-default">
 		<!-- 自定义拦截器 -->
 		<interceptors>
-			<!-- struts inject spring context -->
+			<!-- struts2 inject spring context using annotation-->
 			<interceptor name="autowiring"
 				class="com.opensymphony.xwork2.spring.interceptor.ActionAutowiringInterceptor" />
-
 			<interceptor-stack name="mystack">
 				<interceptor-ref name="autowiring"></interceptor-ref>
 				<interceptor-ref name="defaultStack">
@@ -56,6 +55,7 @@
 		</global-results>
 	</package>
 	
+	<!-- include the child struts xml config -->
 	<include file="struts-tcash.xml"/>
 	<include file="struts-system.xml"/>
     

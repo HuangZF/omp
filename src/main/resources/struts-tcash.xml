@@ -6,7 +6,7 @@
 <struts>
 	
 	<package name="tcash" extends="parent-package">
-		<action name="tcash_*" method="{1}" class="com.ruyicai.omp.controller.TcashDetailController" >
+		<action name="tcash_*" method="{1}" class="com.ruyicai.omp.controller.tcash.TcashDetailController" >
 			<result name="tcashdetail_page">WEB-INF/pages/tcash/TcashDetail.jsp</result>
 			<result name="success" type="json">
 				<param name="root">action</param>

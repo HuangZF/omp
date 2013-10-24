@@ -76,10 +76,33 @@
 		<servlet-name>spring-handler</servlet-name> <url-pattern>/</url-pattern> 
 		</servlet-mapping> -->
 
+	<!-- ehcache configuration, it should be front of struts filter-->
+	<filter>
+	  <filter-name>CachePageCachingFilter</filter-name>
+	  <filter-class>net.sf.ehcache.constructs.web.filter.SimplePageCachingFilter
+	  </filter-class>
+	  <init-param>
+	    <param-name>suppressStackTraces</param-name>
+	    <param-value>false</param-value>
+	  </init-param>
+	  <init-param>
+	    <param-name>cacheName</param-name>
+	    <param-value>CachePageCachingFilter</param-value>
+	  </init-param>
+	</filter>
+	<filter-mapping>
+	  <filter-name>CachePageCachingFilter</filter-name>
+	  <url-pattern>/tcash_showPage</url-pattern>
+	</filter-mapping>
+
 	<!-- handle struts2 requests -->
 	<filter>
 		<filter-name>struts2</filter-name>
 		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+		<init-param>
+	        <param-name>struts.custom.i18n.resources</param-name>
+	        <param-value>com.granddragon.online.message.globalMessages</param-value>
+        </init-param>
 	</filter>
 
 	<filter-mapping>

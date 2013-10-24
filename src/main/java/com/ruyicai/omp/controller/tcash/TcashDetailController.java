@@ -1,4 +1,4 @@
-package com.ruyicai.omp.controller;
+package com.ruyicai.omp.controller.tcash;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.opensymphony.xwork2.ModelDriven;
 import com.ruyicai.omp.constant.PubConst;
 import com.ruyicai.omp.controller.base.BaseAction;
-import com.ruyicai.omp.domain.TcashDetail;
-import com.ruyicai.omp.service.TcashDetailService;
+import com.ruyicai.omp.domain.tcash.TcashDetail;
+import com.ruyicai.omp.service.tcash.TcashDetailService;
 
 public class TcashDetailController extends BaseAction implements ModelDriven<TcashDetail>{
 
@@ -90,7 +90,7 @@ public class TcashDetailController extends BaseAction implements ModelDriven<Tca
 //	}
 
 	/**
-	 * override  the ModelDriven interface method
+	 * override the ModelDriven interface getModel() method
 	 */
 	public TcashDetail getModel() {
 		return tcashDetail;
