@@ -4,10 +4,30 @@
 	<typeAlias alias="TcashDetail" type="com.ruyicai.omp.domain.tcash.TcashDetail" />
 	
     <resultMap id="TcashDetailList" class="TcashDetail">
-        <result property="id" column="id" />
-        <result property="userno" column="userno" />
-        <result property="ttransactionid" column="ttransactionid" />
-        <result property="name" column="name" />
+        <result property="id" column="ID" />
+        <result property="userno" column="USERNO" />
+        <result property="ttransactionid" column="TTRANSACTIONID" />
+        <result property="name" column="NAME" />
+        <result property="provcode" column="PROVCODE" />
+        <result property="areacode" column="AREACODE" />
+        <result property="provname" column="PROVNAME" />
+        <result property="areaname" column="AREANAME" />
+        <result property="amt" column="AMT" />
+        <result property="fee" column="FEE" />
+        <result property="plattime" column="PLATTIME" />
+        <result property="bankname" column="BANKNAME" />
+        <result property="bankaccount" column="BANKACCOUNT" />
+        <result property="state" column="STATE" />
+        <result property="subbankname" column="SUBBANKNAME" />
+        <result property="rejectReason" column="REJECTREASON" />
+        <result property="type" column="TYPE" />
+        <result property="batchno" column="BATCHNO" />
+        <result property="modifytime" column="MODIFYTIME" />
+        <result property="checktime" column="CHECKTIME" />
+        <result property="remittime" column="REMITTIME" />
+        <result property="estimatefinishtime" column="ESTIMATEFINISHTIME" />
+        <result property="finishtime" column="FINISHTIME" />
+        <result property="operator" column="OPERATOR" />
     </resultMap>
     <sql id="countTcashDetail">
     	SELECT COUNT(*) FROM TCASHDETAIL
@@ -17,18 +37,112 @@
 		ID,
 		USERNO,
 		TTRANSACTIONID,
-		NAME
+		NAME,
+		PROVCODE,
+		AREACODE,
+		PROVNAME,
+		AREANAME,
+		AMT,
+		FEE,
+		PLATTIME,
+		BANKNAME,
+		BANKACCOUNT,
+		STATE,
+		SUBBANKNAME,
+		REJECTREASON,
+		TYPE,
+		BATCHNO,
+		MODIFYTIME,
+		CHECKTIME,
+		REMITTIME,
+		ESTIMATEFINISHTIME,
+		FINISHTIME,
+		OPERATOR
 		from TCASHDETAIL
 	</sql>
-	<sql id="searchOrderby">
-		ORDER BY ID DESC
+	<sql id="searchTcashDetailOrderby">
+		ORDER BY $orderByString$,ID 
+	</sql> 
+    
+    <!-- "与"关系的查询条件	-->
+	<sql id="searchTcashDetailAndWhere">
+		<dynamic prepend=" WHERE ">
+			<isPropertyAvailable property="id"
+				prepend=" AND ">
+				ID = #id#
+			</isPropertyAvailable>
+			<isPropertyAvailable property="userno" prepend=" AND ">
+				USERNO = #userno#
+			</isPropertyAvailable>
+			<isPropertyAvailable property="ttransactionid"
+				prepend=" AND ">
+				TTRANSACTIONID = #ttransactionid#
+			</isPropertyAvailable>
+			<isPropertyAvailable property="name"
+				prepend=" AND ">
+				NAME = #name#
+			</isPropertyAvailable>
+		</dynamic>
 	</sql>
+	
+	<!-- "或"关系的查询条件 -->
+	<sql id="searchTcashDetailOrWhere">
+		<dynamic prepend=" WHERE ">
+			<isPropertyAvailable property="id"
+				prepend=" OR ">
+				ID IN
+				<iterate property="id" conjunction="," close=")"
+					open="(">
+					#id[]# 
+				</iterate>
+			</isPropertyAvailable>
+			<isPropertyAvailable property="userno" prepend=" OR ">
+				userno IN
+				<iterate property="userno" conjunction="," close=")" open="(">
+					#userno[]# 
+				</iterate>
+			</isPropertyAvailable>
+			<isPropertyAvailable property="ttransactionid" prepend=" OR ">
+				TTRANSACTIONID LIKE
+				<iterate property="ttransactionid" conjunction="OR TTRANSACTIONID LIKE ">
+					'%$ttransactionid[]$%' ESCAPE '/'
+				</iterate>
+			</isPropertyAvailable>
+			<isPropertyAvailable property="name" prepend=" OR ">
+				NAME LIKE
+				<iterate property="name" conjunction="OR NAME LIKE ">
+					'%$name[]$%' ESCAPE '/'
+				</iterate>
+			</isPropertyAvailable>
+		</dynamic>
+	</sql>
+	
 	<select id="countTcashDetailNoWhere" resultClass="java.lang.Integer">
         <include refid="countTcashDetail"/>
     </select>
-	<select id="getTcashDetailListNoWhere" resultMap="TcashDetailList">
+	<select id="getTcashDetailListNoWhere" resultMap="TcashDetailList" parameterClass="java.lang.String">
         <include refid="getTcashDetailList"/>
-        <include refid="searchOrderby"/>
+        <include refid="searchTcashDetailOrderby"/>
     </select>
+    
+    <select id="countTcashDetailWhereAnd" resultClass="java.lang.Integer" parameterClass="java.util.Map">
+        <include refid="countTcashDetail"/>
+        <include refid="searchTcashDetailAndWhere"/>
+    </select>
+    <select id="getTcashDetailListWhereAnd" resultMap="TcashDetailList" parameterClass="java.util.Map">
+		<include refid="getTcashDetailList" />
+		<include refid="searchTcashDetailAndWhere" />
+		<include refid="searchTcashDetailOrderby" />
+	</select>
+	
+	<select id="countTcashDetailWhereOr" resultClass="java.lang.Integer" parameterClass="java.util.Map">
+        <include refid="countTcashDetail"/>
+        <include refid="searchTcashDetailOrWhere"/>
+    </select>
+    <select id="getTcashDetailListWhereOr" resultMap="TcashDetailList" parameterClass="java.util.Map">
+		<include refid="getTcashDetailList" />
+		<include refid="searchTcashDetailOrWhere" />
+		<include refid="searchTcashDetailOrderby" />
+	</select>
 	
 </sqlMap>

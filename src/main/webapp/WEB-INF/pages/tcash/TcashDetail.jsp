@@ -34,17 +34,20 @@
 		    hidegrid="true"
 		    multiselect="true"
 		    editurl="%{editUrl}"
+		    sortname="id" 
+            sortorder="desc" 
+            sortable="true"
 		    resizable="true"
 		    autowidth="true"
 			onErrorTopics="getErrorMsg">
-				<sjg:gridColumn name="id" index="id" title="提现明细标识" width="20" editable="true"
-					formatter="integer" sortable="false" />
-				<sjg:gridColumn name="userno" index="userno" title="账户标识" width="20" editable="true"
+				<sjg:gridColumn name="id" index="id" title="提现明细标识" width="20" editable="true" search="true" searchoptions="{searchhidden:true,sopt:['cn']}"
+					formatter="integer" sortable="true" />
+				<sjg:gridColumn name="userno" index="userno" title="账户标识" width="20" editable="true" search="true" searchoptions="{searchhidden:true,sopt:['cn']}"
 					hidden="true" sortable="true" />
-				<sjg:gridColumn name="ttransactionid" index="ttransactionid" editable="true"
-					width="20" title="交易标识" sortable="false" />
-				<sjg:gridColumn name="name" index="name" title="姓名" width="20" editable="true"
-					sortable="false" />
+				<sjg:gridColumn name="ttransactionid" index="ttransactionid" editable="true" search="true" searchoptions="{searchhidden:true,sopt:['cn']}"
+					width="20" title="交易标识" sortable="true" />
+				<sjg:gridColumn name="name" index="name" title="姓名" width="20" editable="true" search="true" searchoptions="{searchhidden:true,sopt:['cn']}"
+					sortable="true" />
 				<sjg:gridColumn name="provcode" index="provcode" title="省代码" editable="true"
 					width="20" hidden="true" sortable="false" />
 				<sjg:gridColumn name="areacode" index="areacode" title="地区代码" editable="false"

@@ -31,7 +31,7 @@ body {
 	padding: 55px 0;
 	overflow: visible;
 	padding-top: 55px;
-	width: 84%;
+	width: 85%;
 	float: right;
 }
 
@@ -62,7 +62,7 @@ body {
 	bottom: 0;
 	float: left;
 	padding-top: 55px;
-	width: 16%;
+	width: 14.5%;
 	background: none repeat scroll 0 0 #310B28;
 	margin-left: 0;
 	margin: 20px 0;
