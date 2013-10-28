@@ -3,7 +3,7 @@
 
 package com.ruyicai.omp.domain.tcash;
 
-import com.ruyicai.omp.domain.tcash.TcashDetail;
+import java.lang.String;
 import java.math.BigDecimal;
 import java.util.Date;
 

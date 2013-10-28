@@ -3,14 +3,37 @@
 
 package com.ruyicai.omp.domain.tcash;
 
-import com.ruyicai.omp.domain.tcash.TcashDetail;
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
+import java.lang.String;
 
 privileged aspect TcashDetail_Roo_ToString {
     
     public String TcashDetail.toString() {
-        return ReflectionToStringBuilder.toString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+        StringBuilder sb = new StringBuilder();
+        sb.append("Amt: ").append(getAmt()).append(", ");
+        sb.append("Areacode: ").append(getAreacode()).append(", ");
+        sb.append("Areaname: ").append(getAreaname()).append(", ");
+        sb.append("Bankaccount: ").append(getBankaccount()).append(", ");
+        sb.append("Bankname: ").append(getBankname()).append(", ");
+        sb.append("Batchno: ").append(getBatchno()).append(", ");
+        sb.append("Checktime: ").append(getChecktime()).append(", ");
+        sb.append("Estimatefinishtime: ").append(getEstimatefinishtime()).append(", ");
+        sb.append("Fee: ").append(getFee()).append(", ");
+        sb.append("Finishtime: ").append(getFinishtime()).append(", ");
+        sb.append("Id: ").append(getId()).append(", ");
+        sb.append("Modifytime: ").append(getModifytime()).append(", ");
+        sb.append("Name: ").append(getName()).append(", ");
+        sb.append("Operator: ").append(getOperator()).append(", ");
+        sb.append("Plattime: ").append(getPlattime()).append(", ");
+        sb.append("Provcode: ").append(getProvcode()).append(", ");
+        sb.append("Provname: ").append(getProvname()).append(", ");
+        sb.append("RejectReason: ").append(getRejectReason()).append(", ");
+        sb.append("Remittime: ").append(getRemittime()).append(", ");
+        sb.append("State: ").append(getState()).append(", ");
+        sb.append("Subbankname: ").append(getSubbankname()).append(", ");
+        sb.append("Ttransactionid: ").append(getTtransactionid()).append(", ");
+        sb.append("Type: ").append(getType()).append(", ");
+        sb.append("Userno: ").append(getUserno());
+        return sb.toString();
     }
     
 }

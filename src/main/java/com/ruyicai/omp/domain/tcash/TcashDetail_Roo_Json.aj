@@ -6,6 +6,7 @@ package com.ruyicai.omp.domain.tcash;
 import com.ruyicai.omp.domain.tcash.TcashDetail;
 import flexjson.JSONDeserializer;
 import flexjson.JSONSerializer;
+import java.lang.String;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
