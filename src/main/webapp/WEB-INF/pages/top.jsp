@@ -1,22 +1,11 @@
 <%@ page language="java" pageEncoding="UTF-8" contentType="text/html;charset=utf-8"%>
-<%@ taglib prefix="s" uri="/struts-tags"%>
-<%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
 <head>
     <title>运营管理平台</title>
-    <!-- 如果使用Tomcat6做服务器，页面不会有乱码。如果用weblogic9，则使用火狐时获取的grid.locale-zh-CN.js是以gb2312来解码的，而这个文件是utf-8编码的，所以会有乱码 -->
-    <!-- 如果使用weblogic9则可能需要修改服务器字符集为utf-8 -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <sj:head locale="zh-CN" jqueryui="true" jquerytheme="%{theme}" customBasepath="templates/themes" 
-        loadAtOnce="true" compressed="false" loadFromGoogle="false" debug="true" />
-
     <link rel="stylesheet" rev="stylesheet" href="styles/x3.css" type="text/css" id="css"/>
-    <style>
-        .commonFont {font-size: 14px; font-style: normal;}
-    </style>
 </head>
-
 <body>
     <div id="head-nav">
         <table width="100%" border="0" cellpadding="0" cellspacing="0" >
@@ -58,10 +47,7 @@
         </table>
     </div>
 
-    <script type="text/javascript" src="js/grid.js"></script>
-    <script type="text/javascript" src="js/showMenu.js"></script>
     <script type="text/javascript">
-    
 	    // 皮肤切换
 	    function changeTheme(theme){
 	    	changeTopMenuCss(theme);

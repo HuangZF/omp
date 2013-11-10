@@ -12,6 +12,11 @@ import com.ruyicai.omp.domain.tcash.TcashDetail;
 import com.ruyicai.omp.service.tcash.TcashDetailService;
 import com.ruyicai.omp.util.JqGridSearchTo;
 
+/**
+ * tcashdetail core controller
+ * @author hzf
+ *
+ */
 public class TcashDetailController extends BaseAction implements ModelDriven<TcashDetail>{
 
 	/**
@@ -27,11 +32,6 @@ public class TcashDetailController extends BaseAction implements ModelDriven<Tca
 	private TcashDetailService tcashDetailService;
 
 	private TcashDetail tcashDetail = new TcashDetail();
-
-	public String showPage()
-	{
-		return "tcashdetail_page";
-	}
 
 	public String queryTcashDetail(){
 		try

@@ -55,7 +55,7 @@
 	</package>
 	
 	<!-- include the child struts xml config -->
-	<include file="struts-tcash.xml"/>
-	<include file="struts-system.xml"/>
+	<include file="struts-ui.xml"/>
+	<include file="struts-core.xml"/>
     
 </struts>

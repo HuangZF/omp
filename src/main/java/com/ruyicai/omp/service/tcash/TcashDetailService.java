@@ -67,18 +67,19 @@ public class TcashDetailService extends ManagerSupport{
 	@SuppressWarnings("unchecked")
 	public List<TcashDetail> queryTcashDetailList(JqGridSearchTo jqGridSearchTo, int pageSize, int pageNum, String orderByColumn, String orderByType) throws Exception
 	{
-		String orderByString = StringBuilderUtil.getOrderByString(orderByColumn, orderByType);
-		if(jqGridSearchTo!=null){
-			Map<String,Object> conditions = SearchOperationUtil.getSqlConditionsMap(jqGridSearchTo);
-			conditions.put("orderByString", orderByString);			
-			if("AND".equalsIgnoreCase(jqGridSearchTo.getGroupOp())){
-				return (List<TcashDetail>)dao.findObjectsByPage("getTcashDetailListWhereAnd", conditions, pageSize, pageNum);
-			}else if("OR".equalsIgnoreCase(jqGridSearchTo.getGroupOp())){
-				return (List<TcashDetail>)dao.findObjectsByPage("getTcashDetailListWhereOr", conditions, pageSize, pageNum);				
-			}
-		}
-
-		return (List<TcashDetail>)dao.findObjectsByPage("getTcashDetailListNoWhere", orderByString, pageSize, pageNum);
+//		String orderByString = StringBuilderUtil.getOrderByString(orderByColumn, orderByType);
+//		if(jqGridSearchTo!=null){
+//			Map<String,Object> conditions = SearchOperationUtil.getSqlConditionsMap(jqGridSearchTo);
+//			conditions.put("orderByString", orderByString);			
+//			if("AND".equalsIgnoreCase(jqGridSearchTo.getGroupOp())){
+//				return (List<TcashDetail>)dao.findObjectsByPage("getTcashDetailListWhereAnd", conditions, pageSize, pageNum);
+//			}else if("OR".equalsIgnoreCase(jqGridSearchTo.getGroupOp())){
+//				return (List<TcashDetail>)dao.findObjectsByPage("getTcashDetailListWhereOr", conditions, pageSize, pageNum);				
+//			}
+//		}
+//
+//		return (List<TcashDetail>)dao.findObjectsByPage("getTcashDetailListNoWhere", orderByString, pageSize, pageNum);
+		return queryTcashDetailListTest();
 	}
 
 	/**
@@ -88,16 +89,17 @@ public class TcashDetailService extends ManagerSupport{
 	 */
 	public int countTcashDetail(JqGridSearchTo jqGridSearchTo) throws Exception
 	{
-		if(jqGridSearchTo != null){
-			Map<String,Object> conditions = SearchOperationUtil.getSqlConditionsMap(jqGridSearchTo);
-			if("AND".equalsIgnoreCase(jqGridSearchTo.getGroupOp())){
-				return (Integer)dao.findObjectByProperties("countTcashDetailWhereAnd", conditions);
-			}else if("OR".equalsIgnoreCase(jqGridSearchTo.getGroupOp())){
-				return (Integer)dao.findObjectByProperties("countTcashDetailWhereOr", conditions);
-			}
-		}
-
-		return (Integer)dao.findObjectByProperties("countTcashDetailNoWhere");
+//		if(jqGridSearchTo != null){
+//			Map<String,Object> conditions = SearchOperationUtil.getSqlConditionsMap(jqGridSearchTo);
+//			if("AND".equalsIgnoreCase(jqGridSearchTo.getGroupOp())){
+//				return (Integer)dao.findObjectByProperties("countTcashDetailWhereAnd", conditions);
+//			}else if("OR".equalsIgnoreCase(jqGridSearchTo.getGroupOp())){
+//				return (Integer)dao.findObjectByProperties("countTcashDetailWhereOr", conditions);
+//			}
+//		}
+//
+//		return (Integer)dao.findObjectByProperties("countTcashDetailNoWhere");
+		return 100;
 
 	}
 }

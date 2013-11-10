@@ -5,7 +5,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>运营管理平台</title>
 </head>
-
 <body bgcolor="#FFFFFF">
 </body>
 </html>

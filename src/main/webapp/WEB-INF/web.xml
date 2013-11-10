@@ -92,7 +92,7 @@
 	</filter>
 	<filter-mapping>
 	  <filter-name>CachePageCachingFilter</filter-name>
-	  <url-pattern>/tcash_showPage</url-pattern>
+	  <url-pattern>/ui/*</url-pattern>
 	</filter-mapping>
 
 	<!-- handle struts2 requests -->

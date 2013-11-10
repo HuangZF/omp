@@ -5,9 +5,14 @@
     "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 	
-	<package name="tcash" extends="parent-package">
+	<package name="core" extends="parent-package">
+		<action name="login_*" method="{1}" class="com.ruyicai.omp.controller.LoginController" >
+			<result name="success">/WEB-INF/pages/main.jsp</result>
+			<result name="top_menu">/WEB-INF/pages/top.jsp</result>
+			<result name="left_menu">/WEB-INF/pages/left.jsp</result>
+			<result name="right">/WEB-INF/pages/right.jsp</result>
+		</action>
 		<action name="tcash_*" method="{1}" class="com.ruyicai.omp.controller.tcash.TcashDetailController" >
-			<result name="tcashdetail_page">WEB-INF/pages/tcash/TcashDetail.jsp</result>
 			<result name="success" type="json">
 				<param name="root">action</param>
 				<!-- <param name="includeProperties">gridModel,total,page,records</param> -->

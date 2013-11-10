@@ -1,23 +1,13 @@
 <%@ page language="java" pageEncoding="UTF-8" contentType="text/html;charset=utf-8"%>
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.Map"%>
-<%@ taglib prefix="s" uri="/struts-tags"%>
-<%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
-<%@ taglib prefix="sjg" uri="/struts-jquery-grid-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
   <head>
-    <link rel="stylesheet" rev="stylesheet" href="styles/x3.css" type="text/css" id="css"/>
     <title>运营管理平台</title>
     <!-- 如果使用Tomcat6做服务器，页面不会有乱码。如果用weblogic9，则使用火狐时获取的grid.locale-zh-CN.js是以gb2312来解码的，而这个文件是utf-8编码的，所以会有乱码 -->
     <!-- 如果使用weblogic9则可能需要修改服务器字符集为utf-8 -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <sj:head locale="zh-CN" jqueryui="true" jquerytheme="%{theme}"
-        customBasepath="templates/themes" loadAtOnce="true"
-        compressed="false" loadFromGoogle="false" debug="true" />
-    <style>
-        .commonFont {font-size: 14px; font-style: normal;}
-    </style>
     <link rel="stylesheet" type="text/css" href="jat/style.css" />
 </head>
 <body>
@@ -35,7 +25,7 @@
                 <a class="menuitem submenuheader" href="">提现管理</a>
                 <div class="submenu">
 	                <ul>
-	                	<li><a href="tcash_showPage" target="mainFrame" >提现信息</a></li>
+	                	<li><a href="ui/tcashui_showPage" target="mainFrame" >提现信息</a></li>
 					</ul>
 				</div>
                 <a class="menuitem" href="">Blue button</a>
@@ -51,13 +41,10 @@
                 <a class="menuitem_red" href="">Red button</a>
                 <a class="menuitem_red" href="">Red button</a>
                 <a class="menuitem_red" href="">Red button</a>
-                <a class="menuitem_red" href="">Red button</a>
-                <a class="menuitem_red" href="">Red button</a>
-                <a class="menuitem_red" href="">Red button</a>
-                <a class="menuitem_red" href="">Red button</a>
                 
    </div>
    
+<script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="jat/ddaccordion.js"></script>
 <script type="text/javascript">
   ddaccordion.init({
