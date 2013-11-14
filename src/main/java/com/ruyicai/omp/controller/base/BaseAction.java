@@ -13,7 +13,8 @@ import org.codehaus.jackson.map.ObjectMapper;
 import com.opensymphony.xwork2.ActionSupport;
 import com.ruyicai.omp.util.JqGridSearchTo;
 
-/**
+/** 请求与响应数据处理基类.
+ * <p>存储请求数据，方便后续使用</p>
  * @author hzf
  * 
  */
@@ -183,31 +184,18 @@ public class BaseAction extends ActionSupport implements SessionAware {
 	}
 	
 	protected JqGridSearchTo getJqGridSearchTo(){
-		/*
-		 *  filters =
-    		{	"groupOp":"AND",
-     			"rules":[
-	       			{"field":"invdate","op":"ge","data":"2007-10-06"},
-	       			{"field":"invdate","op":"le","data":"2007-10-20"},
-	       			{"field":"name","op":"bw","data":"Client 3"}
-      			]
-    		} 
-		 */
 		JqGridSearchTo jqGridSearchTo = null;
 		if(getFilters()!=null && !"".equals(getFilters())){
 			ObjectMapper mapper = new ObjectMapper();
-			
 			try {
 				jqGridSearchTo = mapper.readValue(getFilters(), JqGridSearchTo.class);
 			} catch (JsonParseException e) {
-				// TODO Auto-generated catch block
+				logger.error("get jqGridSearchTo JsonParseException: ", e);
 				e.printStackTrace();
 			} catch (JsonMappingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("get jqGridSearchTo JsonMappingException: ", e);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("get jqGridSearchTo IOException: ", e);
 			}
 		}
 		return jqGridSearchTo;

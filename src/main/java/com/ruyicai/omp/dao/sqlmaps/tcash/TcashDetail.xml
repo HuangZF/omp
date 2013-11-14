@@ -82,6 +82,58 @@
 				prepend=" AND ">
 				NAME = #name#
 			</isPropertyAvailable>
+			<isPropertyAvailable property="amt"
+				prepend=" AND ">
+				AMT = #amt#
+			</isPropertyAvailable>
+			<isPropertyAvailable property="fee"
+				prepend=" AND ">
+				FEE = #fee#
+			</isPropertyAvailable>
+			<isPropertyAvailable property="plattime"
+				prepend=" AND ">
+				PLATTIME = #plattime#
+			</isPropertyAvailable>
+			<isPropertyAvailable property="bankname"
+				prepend=" AND ">
+				BANKNAME = #bankname#
+			</isPropertyAvailable>
+			<isPropertyAvailable property="bankaccount"
+				prepend=" AND ">
+				BANKACCOUNT = #bankaccount#
+			</isPropertyAvailable>
+			<isPropertyAvailable property="state"
+				prepend=" AND ">
+				STATE = #state#
+			</isPropertyAvailable>
+			<isPropertyAvailable property="subbankname"
+				prepend=" AND ">
+				SUBBANKNAME = #subbankname#
+			</isPropertyAvailable>
+			<isPropertyAvailable property="type"
+				prepend=" AND ">
+				TYPE = #type#
+			</isPropertyAvailable>
+			<isPropertyAvailable property="modifytime"
+				prepend=" AND ">
+				MODIFYTIME = #modifytime#
+			</isPropertyAvailable>
+			<isPropertyAvailable property="checktime"
+				prepend=" AND ">
+				CHECKTIME：审核时间 = #checktime#
+			</isPropertyAvailable>
+			<isPropertyAvailable property="remittime"
+				prepend=" AND ">
+				REMITTIME = #remittime#
+			</isPropertyAvailable>
+			<isPropertyAvailable property="finishtime"
+				prepend=" AND ">
+				FINISHTIME = #finishtime#
+			</isPropertyAvailable>
+			<isPropertyAvailable property="operator"
+				prepend=" AND ">
+				OPERATOR = #operator#
+			</isPropertyAvailable>
 		</dynamic>
 	</sql>
 	

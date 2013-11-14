@@ -33,7 +33,6 @@ public class JsonUtil {
 		try {
 			return new JSONSerializer().serialize(map);
 		} catch (Exception e) {
-//			throw new RuyicaiException("toJson error", e);
 			e.printStackTrace();
 		}
 		return null;
@@ -43,7 +42,6 @@ public class JsonUtil {
 		try {
 			return new JSONSerializer().exclude("*.class").serialize(list);
 		} catch (Exception e) {
-//			throw new RuyicaiException("toJson error", e);
 			e.printStackTrace();
 		}
 		return null;

@@ -115,7 +115,7 @@ var for_confirm = function(str){
 $.subscribe('getErrorMsg',function(event,data) {
 	var errText = event.originalEvent.request.responseText;
 	//alert(jQuery.parseJSON(errText).errInfo);
-	// 2012-12-26 CHL UPDATE 【多处登录】列表操作显示错误消息  START
+	// 多处登录,列表操作显示错误消息
 //	$.jgrid.info_dialog($.jgrid.errors.errcap,'<div class="ui-state-error">'+jQuery.parseJSON(errText).errInfo +'</div>', $.jgrid.edit.bClose,{buttonalign:'right'});
 	if(!errText || errText == "")
 	{
@@ -128,12 +128,10 @@ $.subscribe('getErrorMsg',function(event,data) {
 	{
 		$.jgrid.info_dialog($.jgrid.errors.errcap,'<div class="ui-state-error">'+jQuery.parseJSON(errText).errInfo +'</div>', $.jgrid.edit.bClose,{buttonalign:'right'});
 	}
-	// 2012-12-26 CHL UPDATE 【多处登录】列表操作显示错误消息  END
 	//$("#assignButton").attr({"disabled":"disabled"});//将按钮禁用
 	//$("#back").focus();
-	//20120827 ouyang add 【错误提示被dialog遮挡】 start
+	// 错误提示被dialog遮挡
 	$('#info_dialog').css('z-index',10000);
-	//20120827 ouyang add 【错误提示被dialog遮挡】 end
 });
 
 function isError(response,postdata){ 

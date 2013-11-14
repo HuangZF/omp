@@ -2,6 +2,11 @@ package com.ruyicai.omp.util;
 
 import java.io.Serializable;
 
+/**
+ * 查询条件
+ * @author hzf
+ *
+ */
 public class JqGridSearchDetailTo implements Serializable {
 	private static final long serialVersionUID = 7677120123986147784L;
 	private String field;   // 查询字段   
